@@ -1,15 +1,18 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text, Button} from "react-native"
 
-function Second({navigation}) {
+function Second({navigation, route}) {
 
     const backToFirst = () => {
         navigation.goBack()
     }
+
+    const user = route.params.username
     
     return(
         <SafeAreaView style={styles.container}>
         <Text style={styles.text}>Hello from Second</Text>
+        <Text>{user}</Text>
         <Button title='Go Back' onPress={backToFirst}/>
         </SafeAreaView>
         )
